@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.ProduceDAO">
+    <select id="selPro" resultType="org.example.Produce" parameterType="int">
+        select * from content where id=#{id}
+    </select>
+    <select id="selProByPrice" resultType="Integer" parameterType="Integer">
+        select price from content where id=#{id}
+    </select>
+    <select id="selBuyPri" resultType="Integer" parameterType="int">
+        select buyprice from trx where contentId=#{contentId}
+    </select>
+    <select id="showAll" resultType="org.example.Content">
+        select id,title,icon,price from content
+    </select>
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.OrderDAO">
+    <select id="ordPri" resultType="Integer">
+        select price from content where id=#{contentId}
+    </select>
+    <insert id="insertOrderPro" >
+        insert into trx(contentId,personId,buyprice,time) values(#{contentId},#{personId},#{buyprice},#{time})
+    </insert>
+</mapper>
